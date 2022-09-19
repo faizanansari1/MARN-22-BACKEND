@@ -21,7 +21,7 @@ router.post("/adduser", (req, res) => {
   newUser.save((error, user) => {
     if (error) res.status(400).json({ error });
     if (user) {
-      res.status(201).json({ user, msg: "user Created Succesfully." });
+      res.status(201).json({ user, msg: "Succesfully created.." });
     }
   });
 });
@@ -37,7 +37,7 @@ router.post("/signin", (req, res) => {
       );
 
       if (isAuthenticated) {
-        res.status(200).json({ msg: "signin successfully...", user });
+        res.status(200).json({ msg: "Successfully signin...", user });
       } else {
         res.status(400).json({ msg: "incorect password..." });
       }
