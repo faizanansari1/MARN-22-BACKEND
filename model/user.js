@@ -16,6 +16,12 @@ const UserSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
+  addToCard: [
+    {
+      type: Object,
+      trim: true,
+    },
+  ],
 });
 UserSchema.methods.authenticate = async function (password) {
   return await bcrypt.compareSync(password, this.hash_password);
